@@ -1,0 +1,13 @@
+       Critérios    |   Resultados
+--------------------|---------------
+Tokens usados       | 1700
+SRP                 | 1
+OCP                 | 1
+DIP                 | 2
+Coesão              | 1
+Acoplamento         | 2
+Escopo Respeitado   | 2
+Código funciona     | 2
+Legibilidade        | 2
+Correções manuais   | 1
+

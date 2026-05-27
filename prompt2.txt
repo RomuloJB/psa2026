@@ -1,0 +1,37 @@
+[CONTEXT]
+Você é um engenheiro de software sênior especializado em JavaScript moderno (ES2022+) e arquitetura de software. O projeto é um módulo de cálculo de descontos para um sistema de pagamentos, que precisa ser extensível, testável e seguir os princípios SOLID.
+
+[OBJECTIVE]
+Implemente em JavaScript puro (sem frameworks) um sistema de aprovação e cálculo de descontos com três tipos: PERCENT (desconto percentual), FIXED (valor fixo) e PROGRESSIVE_QUANTITY (percentual crescente por quantidade, onde discountValue é aplicado por unidade acima do mínimo).
+
+Requisitos obrigatórios:
+1. Aplicar o padrão Strategy para as regras de desconto (interface DiscountStrategy com método calculate(unitPrice, quantity, discountValue)).
+2. Aplicar o padrão Factory para instanciar a estratégia correta a partir do tipo.
+3. Aplicar o padrão Repository para persistir e recuperar os resultados (in-memory).
+4. Criar um DTO chamado DiscountResult com os campos: type, unitPrice, quantity, discountValue, originalTotal, discountAmount, finalTotal.
+5. Criar um DiscountService que orquestra: valida se o desconto é aplicável (desconto > 0, quantity > 0, unitPrice > 0), aplica a estratégia e salva no repositório.
+6. Seguir SOLID: cada classe com responsabilidade única, aberta para extensão, fechada para modificação.
+
+[STYLE]
+- JavaScript puro, classes ES6+, sem TypeScript.
+- Nenhuma dependência externa.
+- Código comentado explicando qual princípio SOLID e qual padrão de projeto está sendo aplicado em cada classe.
+- Usar console.log para mostrar os resultados.
+
+[TONE]
+Código de nível sênior: nomes de variáveis e classes em inglês, métodos pequenos, sem lógica duplicada.
+
+[AUDIENCE]
+Desenvolvedores que estão aprendendo SOLID e design patterns na prática, portanto os comentários devem ser didáticos.
+
+[RESPONSE]
+O output do programa ao ser executado deve ser algo próximo a este formato:
+
+Discount applied: DiscountResult{type=PERCENT, unitPrice=120.0, quantity=2, discountValue=10.0, originalTotal=240.0, discountAmount=24.0, finalTotal=216.0}
+Discount applied: DiscountResult{type=FIXED, unitPrice=80.0, quantity=1, discountValue=15.0, originalTotal=80.0, discountAmount=15.0, finalTotal=65.0}
+Discount applied: DiscountResult{type=PROGRESSIVE_QUANTITY, unitPrice=40.0, quantity=5, discountValue=1.5, originalTotal=200.0, discountAmount=15.0, finalTotal=185.0}
+Saved: DiscountResult{type=PERCENT, unitPrice=120.0, quantity=2, discountValue=10.0, originalTotal=240.0, discountAmount=24.0, finalTotal=216.0}
+Saved: DiscountResult{type=FIXED, unitPrice=80.0, quantity=1, discountValue=15.0, originalTotal=80.0, discountAmount=15.0, finalTotal=65.0}
+Saved: DiscountResult{type=PROGRESSIVE_QUANTITY, unitPrice=40.0, quantity=5, discountValue=1.5, originalTotal=200.0, discountAmount=15.0, finalTotal=185.0}
+
+Entregue apenas o código JavaScript completo pronto para rodar com node index.js, seguido de uma tabela resumindo qual padrão de projeto e princípio SOLID foi aplicado em cada classe.
